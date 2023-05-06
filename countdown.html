@@ -2,14 +2,14 @@
 <html>
 <head>
     <title>Countdown made by HP</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-image: url("beach.jpg");
             background-size: cover;
             background-position: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 8vw;
+            font-size: 5vw;
             color: #ffffff;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             margin: 0;
@@ -17,7 +17,7 @@
         }
 
         h1 {
-            font-size: 16vw;
+            font-size: 10vw;
             text-align: center;
             margin-top: 10vw;
             margin-bottom: 2vw;
@@ -25,28 +25,42 @@
         }
 
         #countdown-container {
-            width: 90vw;
-            height: 50vw;
+            width: 80vw;
+            height: 30vw;
             margin: 0 auto;
             background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 5vw;
-            padding: 5vw;
-            box-shadow: 5vw 5vw 10vw rgba(0, 0, 0, 0.3);
+            border-radius: 2vw;
+            padding: 2vw;
+            box-shadow: 2vw 2vw 4vw rgba(0, 0, 0, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         #countdown {
-            font-size: 12vw;
+            font-size: 10vw;
             text-align: center;
-            margin-top: 8vw;
+            margin-top: 4vw;
             text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
             color: #333;
+        }
+        
+        #background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image: url("beach.jpg");
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
 <body>
+    <div id="background-img"></div>
     <h1>TJ Costalle :D</h1>
     <div id="countdown-container">
         <p id="countdown"></p>
@@ -71,9 +85,7 @@
             var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
             // Update the HTML with the time remaining
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-
+            document.getElementById("countdown").innerHTML = days + "d " +
             // If the countdown is over, stop updating and display a message
             if (timeRemaining < 0) {
                 clearInterval(countdownInterval);
