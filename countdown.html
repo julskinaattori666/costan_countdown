@@ -1,103 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Countdown made by HP</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			background-image: url("beach.jpg");
-			background-size: cover;
-			background-position: center;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 4vw;
-			color: #ffffff;
-			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		}
+    <title>Countdown made by HP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url("beach.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 5vw;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0;
+        }
 
-		h1 {
-			font-size: 8vw;
-			text-align: center;
-			margin-top: 10vw;
-			margin-bottom: 2vw;
-			text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-		}
+        h1 {
+            font-size: 10vw;
+            text-align: center;
+            margin-top: 10vw;
+            margin-bottom: 2vw;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        }
 
-		#countdown-container {
-			width: 90vw;
-			height: 30vw;
-			margin: 0 auto;
-			background-color: rgba(255, 255, 255, 0.7);
-			border-radius: 4vw;
-			padding: 4vw;
-			box-shadow: 2vw 2vw 4vw rgba(0, 0, 0, 0.3);
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
+        #countdown-container {
+            width: 80vw;
+            height: 30vw;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 2vw;
+            padding: 2vw;
+            box-shadow: 2vw 2vw 4vw rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-		#countdown {
-			font-size: 8vw;
-			text-align: center;
-			margin-top: 4vw;
-			text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-			color: #333;
-		}
-	</style>
+        #countdown {
+            font-size: 10vw;
+            text-align: center;
+            margin-top: 4vw;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-	<h1>TJ Costalle :D</h1>
-	<div id="countdown-container">
-		<p id="countdown"></p>
-	</div>
+    <h1>TJ Costalle :D</h1>
+    <div id="countdown-container">
+        <p id="countdown"></p>
+    </div>
 
-	<script>
-		// Set the date to count down to
-		var countDownDate = new Date("Aug 10, 2023 00:00:00").getTime();
+    <script>
+        // Set the date to count down to
+        var countDownDate = new Date("Aug 10, 2023 00:00:00").getTime();
 
-		// Update the countdown every 1 second
-		var countdownInterval = setInterval(function() {
-			// Get today's date and time
-			var now = new Date().getTime();
+        // Update the countdown every 1 second
+        var countdownInterval = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
 
-			// Calculate the time remaining
-			var timeRemaining = countDownDate - now;
+            // Calculate the time remaining
+            var timeRemaining = countDownDate - now;
 
-			// Calculate days, hours, minutes, and seconds remaining
-			var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-			var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            // Calculate days, hours, minutes, and seconds remaining
+            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-			// Update the HTML with the time remaining
-			document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-				+ minutes + "m " + seconds + "s ";
+            // Update the HTML with the time remaining
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
 
-			// If the countdown is over, stop updating and display a message
-			if (timeRemaining < 0) {
-				clearInterval(countdownInterval);
-				document.getElementById("countdown").innerHTML = "Countdown over!";
-			}
-		
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: 24px;
-  }
-  
-  h1 {
-    font-size: 48px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-  }
-  
-  #countdown-container {
-    width: 80%;
-    height: 150px;
-    margin-top: 20px;
-  }
-  
-  #countdown {
-    font-size: 48px;
-    margin-top: 30px;
-  }
-}
+            // If the countdown is over, stop updating and display a message
+            if (timeRemaining < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "Countdown over!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
