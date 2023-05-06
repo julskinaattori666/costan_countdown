@@ -86,6 +86,10 @@
 
             // Update the HTML with the time remaining
             document.getElementById("countdown").innerHTML = days + "d " +
+                hours + "h " +
+                minutes + "m " +
+                seconds + "s ";
+
             // If the countdown is over, stop updating and display a message
             if (timeRemaining < 0) {
                 clearInterval(countdownInterval);
